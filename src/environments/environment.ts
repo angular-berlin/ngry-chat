@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
+  azureSentimentServiceUrl: '',
+  azureTextAnalysisToken: '',
   twilioTokenURL: 'https://camel-hippopotamus-7503.twil.io/chat-token?identity=user&device=web'
 };

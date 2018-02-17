@@ -6,11 +6,10 @@
 #layout {
   margin: 0 20px;
   display: grid;
-  grid-template-rows: 75px $nav-height;
+  grid-template-rows: $header-height $nav-height auto;
   grid-template-areas:
     "header"
     "nav"
-    "message"
     "chat";
   @media (min-width: 992px) {
     width: 960px;
@@ -21,15 +20,21 @@
 /* CCS Grid Template Areas */
 #header {
   grid-area: header;
-  // border-bottom: $border-bottom-grey-dark;
+  display: grid;
+  align-content: center;
+  h1 {
+    padding-left: $gap;
+  }
 }
 #nav {
   grid-area: nav;
-  // border-bottom: $border-bottom-grey-dark;
+  display: grid;
+  align-content: center;
+  h2 {
+    padding-left: $gap * 2;
+  }
 }
-#message {
-  grid-area: message;
-}
-#chat {
+app-chat {
   grid-area: chat;
 }
+
