@@ -37,6 +37,8 @@ export class ChatComponent implements OnInit {
         if (confirm("Are you sure you want to post?")) {
           this.twilioChatService.sendMessage(this.inputMsg);          
         }
+      } else {
+        this.twilioChatService.sendMessage(this.inputMsg);
       }
     });
   }
