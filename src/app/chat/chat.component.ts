@@ -4,7 +4,7 @@ import { TextAnalysisService } from '../core/text-analysis.service';
 import { LanguageCode } from '../models/language-code-enum';
 
 @Component({
-  selector: 'app-chat-component',
+  selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })

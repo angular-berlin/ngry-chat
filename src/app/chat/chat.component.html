@@ -1,4 +1,4 @@
-<form action="" id="message">
+<form id="message">
     <input type="text" [(ngModel)]="inputMsg" name="inputMsg" class="send-input" placeholder="send">
     <button class="material-icons send-btn" (click)="_handleClick()" [disabled]="!chatConnected">send</button>
 </form>
