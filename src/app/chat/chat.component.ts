@@ -12,7 +12,7 @@ export class FormInfo {
 }
 
 @Component({
-  selector: 'app-chat-component',
+  selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
@@ -29,7 +29,7 @@ export class ChatComponent implements OnInit {
         this.chatConnected = true
       );
     this.twilioChatService.messages$.subscribe((messages)=> {this.messages = messages; console.log(this.messages);});
-    
+
   }
 
   _handleClick() {

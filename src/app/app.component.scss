@@ -6,12 +6,11 @@
 #layout {
   margin: 0 20px;
   display: grid;
-  grid-template-rows: $header-height $nav-height $message-height auto;
+  grid-template-rows: $header-height $nav-height auto;
   grid-template-areas:
     "header"
     "nav"
-    "message"
-    "conversation";
+    "chat";
   @media (min-width: 992px) {
     width: 960px;
     margin: 0 auto;
@@ -35,33 +34,7 @@
     padding-left: $gap * 2;
   }
 }
-#message {
-  grid-area: message;
-  display: grid;
-  grid-template: auto / auto $material-font-size + 1rem;
-  align-content: center;
-  .send-input {
-    padding: $margin-ver-sides;
-    padding-left: $gap * 2;
-    font-size: 1.2rem;
-    border: $message-border;
-    border-right: transparent;
-    border-radius: $border-radius 0 0 $border-radius;
-    // For MS Edge
-    height: 100%;
-  }
-  .send-btn {
-    padding: $margin-ver-sides;
-    border: $message-border;
-    border-left: transparent;
-    border-radius: 0 $border-radius $border-radius 0;
-    &:hover {
-      cursor: pointer;
-    }
-  }
+app-chat {
+  grid-area: chat;
 }
-#conversation {
-  grid-area: conversation;
-  padding: $margin-ver-sides;
-  padding-left: $gap;
-}
+
