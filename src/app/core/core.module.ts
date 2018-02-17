@@ -2,8 +2,12 @@ import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core
 import { CoreConfig } from './core.config';
 import { CoreService } from './core.service';
 import { TwilioChatService } from './twilio-chat.service';
+import { ChatModule } from '../chat/chat.module';
 
 @NgModule({
+  imports: [
+    ChatModule
+  ],
   providers: [ CoreService, TwilioChatService ]
 })
 export class CoreModule {
