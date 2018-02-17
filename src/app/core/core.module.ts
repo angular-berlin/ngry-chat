@@ -4,12 +4,13 @@ import { CoreService } from './core.service';
 import {TextAnalysisService} from './text-analysis.service';
 
 import { TwilioChatService } from './twilio-chat.service';
+import { FunnyNamesService } from './funny-names.service';
 import { ChatModule } from '../chat/chat.module';
 @NgModule({
   imports: [
     ChatModule
   ],
-  providers: [ CoreService, TwilioChatService ]
+  providers: [ CoreService, TwilioChatService, FunnyNamesService ]
 })
 export class CoreModule {
   public static forRoot(config: CoreConfig): ModuleWithProviders {
