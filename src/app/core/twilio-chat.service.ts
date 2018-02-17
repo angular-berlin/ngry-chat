@@ -63,7 +63,7 @@ export class TwilioChatService {
             return client.getChannelByUniqueName(chatName);
           })
           .then(channel => this.channel = channel, () => {
-            return this.client.createChannel({ uniqureName: chatName });
+            return this.client.createChannel({ uniqueName: chatName });
           })
           .then(channel => {
             return channel.join().then(resolve());
