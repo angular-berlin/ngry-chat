@@ -1,4 +1,4 @@
 export interface TwilioChatMessage {
-    text: string,
-    user: string
+    text: string;
+    user: string;
 }

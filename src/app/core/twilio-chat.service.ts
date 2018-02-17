@@ -75,6 +75,6 @@ export class TwilioChatService {
             reject(err);
           });
       });
-    })
+    });
   }
 }

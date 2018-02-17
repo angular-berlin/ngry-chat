@@ -11,7 +11,7 @@ import { LanguageCode } from '../models/language-code-enum';
 })
 export class ChatComponent implements OnInit {
   messages = [];
-  inputMsg = "";
+  inputMsg = '';
   nickname: string;
   chatConnected = false;
 
@@ -26,20 +26,21 @@ export class ChatComponent implements OnInit {
       .then( () =>
         this.chatConnected = true
       );
-      
-      this.twilioChatService.messages$.subscribe((messages)=> this.messages = messages);
+
+      this.twilioChatService.messages$.subscribe((messages) => this.messages = messages);
     });
   }
 
   _handleClick() {
     this.textAnalysisService.isMessagePositiveSentiment(this.inputMsg, LanguageCode.EN).subscribe((result) => {
       if (!result) {
-        if (confirm("Are you sure you want to post?")) {
-          this.twilioChatService.sendMessage(this.inputMsg);          
+        if (confirm('Are you sure you want to post?')) {
+          this.twilioChatService.sendMessage(this.inputMsg);
         }
       } else {
         this.twilioChatService.sendMessage(this.inputMsg);
       }
+      this.inputMsg = '';
     });
   }
 }
