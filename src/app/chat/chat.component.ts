@@ -32,7 +32,12 @@ export class ChatComponent implements OnInit {
   }
 
   _handleClick() {
-    this.twilioChatService.sendMessage(this.inputMsg);
-    console.log(this.textAnalysisService.getSentimentScoreForText(this.inputMsg, LanguageCode.EN));
+    this.textAnalysisService.isMessagePositiveSentiment(this.inputMsg, LanguageCode.EN).subscribe((result) => {
+      if (!result) {
+        if (confirm("Are you sure you want to post?")) {
+          this.twilioChatService.sendMessage(this.inputMsg);          
+        }
+      }
+    });
   }
 }

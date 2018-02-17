@@ -8,7 +8,7 @@ export class FunnyNamesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  generateName(): Observable {
+  generateName(): Observable<string> {
     return this.httpClient.post('https://api.codetunnel.net/random-nick',{},{}).map((response: any) => response.nickname)
   }
 }
