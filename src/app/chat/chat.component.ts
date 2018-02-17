@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-message-box-component',
-  templateUrl: './message-box-component.component.html',
-  styleUrls: ['./message-box-component.component.scss']
+  selector: 'app-chat-component',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
 
