@@ -1,9 +1,10 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 import { CoreConfig } from './core.config';
 import { CoreService } from './core.service';
+import { TwilioService } from './twilio.service';
 
 @NgModule({
-  providers: [ CoreService ]
+  providers: [ CoreService, TwilioService ]
 })
 export class CoreModule {
   public static forRoot(config: CoreConfig): ModuleWithProviders {
