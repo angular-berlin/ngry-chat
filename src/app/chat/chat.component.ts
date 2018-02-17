@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { TwilioChatService } from '../core/twilio-chat.service';
 
 export class Message {
   user: string;
   message: string;
+}
+
+export class FormInfo {
+  userMsg: string;
 }
 
 @Component({
@@ -11,26 +16,22 @@ export class Message {
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  messages = [
-    {
-      "user": "user1",
-      "text": "message1 - totally made up stuff"
-    }, 
-    {
-      "user": "user2",
-      "text": "message2 - totally made up stuff"
-    }, 
-    {
-      "user": "user2",
-      "text": "message2 - totally made up stuff"
-    }, 
-  ];
+  messages = [];
+  inputMsg = "";
+  chatConnected = false;
 
-  constructor() { }
+  constructor(private twilioChatService: TwilioChatService) { }
 
   ngOnInit() {
+    this.twilioChatService.enterChat('ngry-chat', 'markus')
+      .then( () =>
+        this.chatConnected = true
+      );
+    this.twilioChatService.messages$.subscribe((messages)=> {this.messages = messages; console.log(this.messages);});
     
   }
 
-
+  _handleClick() {
+    this.twilioChatService.sendMessage(this.inputMsg);
+  }
 }
