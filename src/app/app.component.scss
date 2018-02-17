@@ -1,0 +1,40 @@
+// src/scss/functions.scss or/and src/scss/variables.scss can be imported in any of our component styles.
+// There will not be any redundancy or snippet repetition.
+@import 'variables';
+
+/* App layout */
+#layout {
+  margin: 0 20px;
+  display: grid;
+  grid-template-rows: $header-height $nav-height auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "chat";
+  @media (min-width: 992px) {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+/* CCS Grid Template Areas */
+#header {
+  grid-area: header;
+  display: grid;
+  align-content: center;
+  h1 {
+    padding-left: $gap;
+  }
+}
+#nav {
+  grid-area: nav;
+  display: grid;
+  align-content: center;
+  h2 {
+    padding-left: $gap * 2;
+  }
+}
+app-chat {
+  grid-area: chat;
+}
+
