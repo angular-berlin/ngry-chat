@@ -1,0 +1,42 @@
+@import 'variables';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 16px;
+  color: $black;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html, body, h1, h2, h3, ul, ol, p {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+h1, h2, h3 {
+  font-weight: 100;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration-line: none;
+  cursor: pointer;
+}
+// select and input do not take 100% of the width by default in MS Edge.
+select {
+  border: 1px solid;
+  // Unify select for all browsers. Then style it specifically if necessary.
+  width: 100%;
+  // This rule makes Safari take the height correctly.
+  -webkit-appearance: menulist-button;
+}
+input {
+  width: 100%;
+}

@@ -1,0 +1,56 @@
+/*
+  FILE: displaying rules matching different breakpoints.
+*/
+
+/*
+  The hidden filosophy is the opposite: desktop (xl) first
+  we hide elements on smaller devices and when we go down
+  we hide the corresponding elements on bigger devices.
+  We can use the hidden utility in combination with row overlapping.
+*/
+// We will most likely not have to use this class.
+.ngry-hidden {
+  display: none;
+}
+@media (max-width: 1199px) {
+  .ngry-hidden-xl-down {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ngry-hidden-xl-up {
+    display: none !important;
+  }
+}
+@media (max-width: 991px) {
+  .ngry-hidden-lg-down {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .ngry-hidden-lg-up {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .ngry-hidden-md-down {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .ngry-hidden-md-up {
+    display: none !important;
+  }
+}
+@media (max-width: 575px) {
+  .ngry-hidden-sm-down {
+    display: none !important;
+  }
+}
+@media (min-width: 576px) {
+  .ngry-hidden-sm-up {
+    display: none !important;
+  }
+}
+
+// TODO: Implement visivility too.
