@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import { ChatComponent } from './chat-component/chat.component';
+import { ChatModule } from './chat/chat.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent,
   ],
   imports: [
     BrowserModule,
     CoreModule.forRoot({}),
+    ChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]
