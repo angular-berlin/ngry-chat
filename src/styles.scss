@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* FILE: Global styles and also imports of other style files */
+
+@import 'reset';
+@import 'variables';
+@import 'grid';
+@import 'responsive-utils';
+@import 'material-icons';
+
+body {
+  font-size: 1rem;
+}
+h1 {
+  font-size: 1.8rem;
+  @media (max-width: 991px) {
+    // font-size: x.xrem;
+  }
+  @media (max-width: 575px) {
+    // font-size: x.xrem;
+  }
+}
