@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TwilioChatService } from '../core/twilio-chat.service';
+import { TextAnalysisService } from '../core/text-analysis.service';
 
 export class Message {
   user: string;
