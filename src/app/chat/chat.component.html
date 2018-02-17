@@ -2,6 +2,6 @@
   <input type="text" [(ngModel)]="inputMsg" name="inputMsg">
   <button (click)="_handleClick()" [disabled]="!chatConnected">Submit</button>
   <div *ngFor="let message of messages">
-   {{message.text}}
+   {{message.user}} - {{message.text}}
   </div>
 </div>
