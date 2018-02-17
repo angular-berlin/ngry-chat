@@ -1,10 +1,10 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 import { CoreConfig } from './core.config';
 import { CoreService } from './core.service';
-import { TwilioService } from './twilio.service';
+import { TwilioChatService } from './twilio-chat.service';
 
 @NgModule({
-  providers: [ CoreService, TwilioService ]
+  providers: [ CoreService, TwilioChatService ]
 })
 export class CoreModule {
   public static forRoot(config: CoreConfig): ModuleWithProviders {

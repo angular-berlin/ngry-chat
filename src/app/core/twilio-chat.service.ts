@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import TwilioChat from 'twilio-chat';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { TwilioChatMessage } from '../models/twilio-chat-message';
 
 @Injectable()
 export class TwilioChatService {
@@ -11,8 +13,8 @@ export class TwilioChatService {
   private channel;
   private client;
   private _messages = [];
-
-  messages: BehaviorSubject<{ user, text }[]> = new BehaviorSubject<{ user, text }[]>([]);
+  private messagesSubject: BehaviorSubject<TwilioChatMessage[]> = new BehaviorSubject<TwilioChatMessage[]>([]);
+  messages$: Observable<TwilioChatMessage[]> = this.messagesSubject.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -43,16 +45,16 @@ export class TwilioChatService {
 
   private addMessage(user, text): void {
     this._messages.push({ user, text });
-    this.messages.next([...this._messages]);
+    this.messagesSubject.next([...this._messages]);
   }
 
   sendMessage(message): void {
     this.channel.sendMessage(message);
   }
 
-  enterChat(chatName) {
+  enterChat(chatName, userName) {
     return new Promise((resolve, reject) => {
-      this.httpClient.get(environment.tokenURL).subscribe((response: any) => {
+      this.httpClient.get(`${environment.twilioTokenURL}&identity=${userName}`).subscribe((response: any) => {
         this.token = response.token;
         TwilioChat.create(this.token)
           .then(client => {
