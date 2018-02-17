@@ -4,13 +4,16 @@
 @import 'variables';
 @import 'grid';
 @import 'responsive-utils';
+@import 'fonts';
 @import 'material-icons';
 
 body {
   font-size: 1rem;
+  font-family: 'Gandhi-Sans-Regular', 'Arial';
 }
 h1 {
   font-size: 2rem;
+  font-family: 'Acme-Regular';
   @media (max-width: 991px) {
     // font-size: x.xrem;
   }
