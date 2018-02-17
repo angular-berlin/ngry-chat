@@ -1,15 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TwilioChatService } from '../core/twilio-chat.service';
 import { TextAnalysisService } from '../core/text-analysis.service';
-
-export class Message {
-  user: string;
-  message: string;
-}
-
-export class FormInfo {
-  userMsg: string;
-}
+import { LanguageCode } from '../models/language-code-enum';
 
 @Component({
   selector: 'app-chat-component',
@@ -21,18 +13,20 @@ export class ChatComponent implements OnInit {
   inputMsg = "";
   chatConnected = false;
 
-  constructor(private twilioChatService: TwilioChatService) { }
+  constructor(private twilioChatService: TwilioChatService,
+              private textAnalysisService: TextAnalysisService) { }
 
   ngOnInit() {
     this.twilioChatService.enterChat('ngry-chat', 'markus')
       .then( () =>
         this.chatConnected = true
       );
-    this.twilioChatService.messages$.subscribe((messages)=> {this.messages = messages; console.log(this.messages);});
+    this.twilioChatService.messages$.subscribe((messages)=> this.messages = messages);
     
   }
 
   _handleClick() {
     this.twilioChatService.sendMessage(this.inputMsg);
+    console.log(this.textAnalysisService.getSentimentScoreForText(this.inputMsg, LanguageCode.EN));
   }
 }
