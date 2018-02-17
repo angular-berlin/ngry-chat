@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './message-box-component.component.html',
   styleUrls: ['./message-box-component.component.scss']
 })
-export class MessageBoxComponentComponent implements OnInit {
+export class ChatComponent implements OnInit {
 
   constructor() { }
 

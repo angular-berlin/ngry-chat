@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import { MessageBoxComponentComponent } from './message-box-component/message-box-component.component';
+import { ChatComponent } from './chat-component/chat.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MessageBoxComponentComponent
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
