@@ -1,7 +1,8 @@
 # NgryChat - hackathon app
 
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+
+Upgrade path taken for Angular CLI from 1.7.0 --> 7.1.4 was followed using this [version commit diff](https://github.com/cexbrayat/angular-cli-diff/compare/1.7.0...7.1.4)
 
 ## Development server
 
