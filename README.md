@@ -1,7 +1,12 @@
 # NgryChat - hackathon app
 
+This project was upgraded to [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+Upgrade path taken for Angular CLI from 1.7.0 --> 7.1.4 was followed using this [version commit diff](https://github.com/cexbrayat/angular-cli-diff/compare/1.7.0...7.1.4).
+
+Upgrade path taken for Angular 5.2 --> 7.1 was followed using the [Angular Update Guide](https://update.angular.io/).
+
+Ran the following command `npx rxjs-tslint rxjs-5-to-6-migrate -p src/tsconfig.app.json` for the Angular CLI to update the RxJs syntax from 5 to 6.
 
 ## Development server
 
@@ -13,7 +18,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
